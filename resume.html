@@ -1,0 +1,179 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NGUYỄN HỒNG DUY</title>
+<style>
+body {
+    color: #000000;
+    background: #EEEEEE;
+    font: 1.1em "Times New Roman";
+    line-height: 1.2;
+    margin: 40px 0;
+}
+#resume {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 40px 60px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 4px #AAAAAA;
+    -webkit-box-shadow: 2px 2px 4px #AAAAAA;
+}
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 200%;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    border-bottom: 1px solid #000000;
+    text-transform: uppercase;
+    font-size: 130%;
+    margin: 1em 0 0 0;
+    padding: 0;
+}
+h3 {
+    font-size: 100%;
+    margin: 0.8em 0 0.3em 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+p {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    }
+ul {
+    padding: 0;
+    margin: 0 1.5em;
+    }
+/* ul immediately after h1 = contact list */
+h1 + ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    }
+h1 + ul > li {
+    display: inline;
+    white-space: pre;
+    list-style-type: none;
+}
+h1 + ul > li:after {
+    content: "  \2022  ";
+}
+h1 + ul > li:last-child:after {
+    content: "";
+}
+/* p immediately after contact list = summary */
+h1 + ul + p {
+    margin: 1em 0;
+}
+@media print {
+    body {
+        font-size: 10pt;
+        margin: 0;
+        padding: 0;
+        background: none;
+    }
+    #resume {
+        margin: 0;
+        padding: 0;
+        border: 0px;
+        background: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    /* Do not underline abbr tags in PDF */
+    abbr {
+        text-decoration: none;
+        font-variant: none;
+    }
+    /* Make links black in PDF */
+    /* Move this outside the print block to apply this in HTML too */
+    a, a:link, a:visited, a:hover {
+        color: #000000;
+        text-decoration: underline;
+    }
+}
+@page {
+    /* Change margins and paper size of PDF */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/@page */
+    size: letter;
+    margin: 0.5in 0.8in;
+}
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 16pt;
+        margin: 0;
+        padding: 0;
+        background: #FFFFFF !important;
+    }
+    #resume {
+        margin: 0;
+        padding: 1em;
+        border: 0px;
+        background: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+}
+
+</style>
+</head>
+<body>
+<div id="resume">
+<h1>NGUYỄN HỒNG DUY</h1>
+<p style="text-align: center; font-size: 18px; font-weight: bold; margin-top: -5px;">
+  SOFTWARE ENGINEER
+</p>
+<!-- The unordered list immediately after the h1 will be formatted on a single
+line. It is intended to be used for contact details -->
+<p>(+84) 0982870931<br />
+<a href="mailto:duynguyen19087@mail.com">duynguyen19087@mail.com</a><br />
+   Hóc Môn, Hồ Chí Minh City<br />
+<a href="https://github.com/ChimUng">github.com/ChimUng</a><br />
+<a href="https://www.linkedin.com/in/hong-duy-chimung-8a2a6b368">linkedin.com/in/hong-duy-chimung-8a2a6b368</a></p>
+<!-- The paragraph after the h1 and ul and before the first h2 is optional. It
+is intended to be used for a short summary. -->
+
+<h2>Introduction</h2>
+<!-- You have to wrap the "left" and "right" half of these headings in spans by
+hand -->
+
+<p>I am a third-year Information Technology student at Sai Gon University (SGU), actively seeking an internship opportunity in software engineering. I possess a strong willingness to learn, thrive under pressure, and consistently meet deadlines. My goal is to gain hands-on experience by applying my academic knowledge to real-world projects, working closely with experienced professionals, and continuously improving my practical skills.</p>
+<p>In the short term, I aim to become a valuable intern by contributing effectively to team projects while learning from mentors and colleagues. Looking ahead, I am committed to growing into a skilled software engineer who can deliver high-quality solutions, communicate well with foreign partners, and take on increasing responsibilities to support organizational success.</p>
+<h2>Projects</h2>
+<h3><span>Q&amp;A Chatbot - Law Rights 2015</span> <span>12/2024 – 03/2025</span></h3>
+<p>A website (built during a Hackathon organized by SGU) to support learning my &ldquo;Pháp Luật Đại Cương&rdquo; subject more effectively:</p>
+<ul>
+<li>Description: A chatbot web app like Gemini that allows users to ask questions related to the 2015 Civil Code.</li>
+<li>Integrated AI Q&amp;A using Gemini API.</li>
+<li>Supabase: Created a client with <code>supabaseUrl</code> and <code>supabaseKey</code> to interact with the database, including configurations like <code>autoRefreshToken</code>, <code>persistSession</code>, and <code>detectSessionInUrl</code> for Google Auth.</li>
+<li>Frontend built with React: login/logout interface, chat input, and history display.</li>
+<li>Backend built with Python (FastAPI): extract PDF data → JSON → FAISS (vector data) for chatbot handling. REST API connects frontend and backend.</li>
+<li>Technologies: React, Python, Supabase, Gemini API, RAG System.</li>
+<li>Link: https://github.com/ChimUng/law_dansu2015_chatbox</li>
+</ul>
+<h3><span>Airline Ticket Management</span> <span>04/2025 – 05/2025</span></h3>
+<p>A group project website that allows users to:</p>
+<ul>
+<li>Search, book, delete, modify, and check flight tickets (UI similar to mixivivu.com).</li>
+<li>Admin Panel (using phpMyAdmin via XAMPP) supports Add/Delete/Update Flights, User Authentication, Role Decentralization, and Statistics.</li>
+<li>I was responsible for backend logic, SQL queries, and interaction between PHP and JS.</li>
+<li>Technologies: PHP, JavaScript (AJAX), MySQL.</li>
+<li>Link: https://github.com/ChimUng/Airline-ticket-manage_project</li>
+</ul>
+<h2>Education</h2>
+<h3><span>Sai Gon University - SGU</span> <span>2023 – 2028</span></h3>
+<ul>
+<li>Major: Information Technology</li>
+<li>GPA: 3.2 / 4.0</li>
+</ul>
+<h2>Skills</h2>
+<ul>
+<li><strong>Languages</strong>: PHP, JavaScript, ReactJS, Python </li>
+<li><strong>Databases</strong>: MySQL, MongoDB</li>
+</ul></div>
+</body>
+</html>

@@ -138,38 +138,36 @@ h1 + ul + p {
 Bachelor of Software Engineering <span style="float:right"><em>Ho Chi Minh City, Vietnam</em></span></p>
 <ul>
 <li>GPA: 3.2/4.0</li>
-<li>Relevant Coursework: Advanced Web Development, Data Structures and Algorithms, Object-Oriented Programming (Java), Software Testing &amp; QA, Database Management.</li>
 </ul>
 <h2>Skills</h2>
 <ul>
 <li><strong>Programming Languages (Proficient):</strong> Java, JavaScript, TypeScript</li>
-<li><strong>Frameworks (Proficient):</strong> Spring Boot, React, Node.js, Next.js</li>
-<li><strong>Databases (Proficient):</strong> MongoDB, PostgreSQL, Redis</li>
-<li><strong>Cloud (Familiar):</strong> AWS, Cloudflare, Supabase</li>
-<li><strong>Tools:</strong> Docker, Git, Postman, GitHub CI/CD, Kafka</li>
+<li><strong>Frameworks (Proficient):</strong> Spring Boot, React, Next.js, Node.js</li>
+<li><strong>Databases (Proficient):</strong> MongoDB, PostgreSQL, Redis, Kafka</li>
+<li><strong>Cloud/Tools (Familiar):</strong> AWS, Cloudflare, Docker, Git, Postman, GitHub CI/CD</li>
 <li><strong>Languages:</strong> Vietnamese (Native), English (Advanced)</li>
 </ul>
 <h2>Projects</h2>
-<p><strong>Animeflix – Anime Streaming Platform <a href="https://github.com/ChimUng/animeflix">[GitHub]</a></strong> <span style="float:right">Jun 2025 – Present</span><br />
-<em>Next.js 15 (App Router), React 19, TypeScript, MongoDB, Redis, NextAuth, Vidstack, Vercel</em></p>
+<p><strong>Animeflix – Anime Streaming Platform</strong> <a href="https://animeflixnow.me/" style="text-decoration:none; color:red; font-weight:bold;"><img src="icon-192x192.png" width="18" height="18" style="vertical-align:-3px; margin-right:3px"/>ANIMEFLIX</a> <span style="float:right">Jun 2025 – Present</span><br />
+<em>Next.js 15, Node.js, TypeScript, MongoDB, Redis, NextAuth, Vidstack, Cloudflare, SW, Pusher</em></p>
 <ul>
-<li>Optimize Next.js 15 App Router with Server/Client Component separation, achieving Lighthouse SEO 100/100, Accessibility 92, and Best Practices 96.</li>
-<li>Engineer Redis caching across Anify, Consumet, and Zoro providers, reducing response time by 75–85% and eliminating 99% of rate-limit errors on high-traffic routes.</li>
-<li>Implement HLS adaptive streaming via Vidstack with MongoDB-backed watch history, retaining user progress across 100% of sessions.</li>
-<li>Deploy serverless functions on Vercel with automatic scaling, handling multi-provider fallback. <a href="https://animeflixnow.vercel.app/" style="text-decoration:none; color:red;">[ <img src="icon-192x192.png" width="18" height="18" style="vertical-align:-3px; margin-right:3px"/>ANIMEFLIX ]</a></li>
+<li>Built multi-tier cache (SW/PWA → region-aware Edge CDN → Redis → Origin), isolating invocation per-region; Redis caching cut response time 75–85%, eliminated 99% rate-limit errors.</li>
+<li>Designed Cursor Pagination (indexed, fixed page-size) + MongoDB document-clustered schema for comments/replies/reactions, avoiding OFFSET re-scan under concurrent load.</li>
+<li>Applied RESTful GET/POST semantics with tiered Cache-Control (public vs private/short-TTL) + ISR revalidation, limiting Origin hits to 1 per cycle regardless of traffic spikes.</li>
+<li>Architected SSR/ISR static-eligible pages with client-side dynamic fetch to preserve Edge cacheability; integrated Pusher WebSocket for real-time comment/notification delivery without polling overhead.</li>
+<li>Implemented HLS streaming with Edge-cached <code>.ts</code> segments, secured via server-to-server signed-URL token (short-TTL) to prevent hotlinking beyond browser-level CORS.</li>
 </ul>
 <p><strong>Animeflix Third-Party System <a href="https://github.com/ChimUng/animeflixbackend">[GitHub]</a></strong> <span style="float:right">Oct 2025 – Present</span><br />
-<em>Spring Boot, Docker, MongoDB, Kafka, Redis (Upstash), RAG, AWS</em></p>
+<em>Spring Boot, Docker, MongoDB, Kafka, Redis, RAG, AWS</em></p>
 <ul>
-<li>Design microservices backend as a developer-facing API platform, enabling third-party developers to integrate via API key authentication with configurable rate limits (1,000 req/hour default).</li>
-<li>Engineer JWT Auth service using JJWT with access/refresh token rotation (15-min/7-day TTL) and Redis-backed rate limiting at 1,000 req/hour per API key.</li>
-<li>Implement Kafka event pipeline (Catalog → User service) with manual commit and partition key by animeId, delivering real-time episode notifications via WebSocket to online users.</li>
-<li>Building Hybrid Search module combining keyword search (Redis-cached, 20–30ms) with semantic search via vector embeddings across 18,000+ anime titles.</li>
-<li>Containerize all 4 services with Docker; architected for AWS deployment with independent scaling per service.</li>
+<li>Built multi-tier REST API cache (JVM Heap via Caffeine → Redis → Cloudflare Edge) for public GET endpoints, reducing round-trips to Origin for shared/non-user-specific data.</li>
+<li>Implemented stateless JWT auth (access/refresh rotation, 15-min/7-day TTL), eliminating per-request DB/session-store round-trip in favor of lightweight local signature verification.</li>
+<li>Designed event-driven microservices (catalog-service, ai-search-service) decoupled via Kafka, isolating heavy cron/AI workloads from user-facing search to prevent RAM exhaustion under concurrent load.</li>
+<li>Built Hybrid Search (Gemini 768-dim embeddings + MongoDB Atlas Vector Search) with confidence-based routing between structured keyword and semantic paths, tuned similarity threshold (0.78) and score-gap detection (0.025) across 5,000+ anime titles.</li>
+<li>Refactored search pipeline to reactive non-blocking (WebFlux, Mono.zip), cutting response latency from 2s to 600ms; added Circuit Breaker on Gemini API (429 handling) with fallback to semantic-only path.</li>
 </ul>
 <h2>Activities &amp; Interests</h2>
 <ul>
-<li>Passionate about full-stack development, scalable web applications, and continuous learning.</li>
 <li>Familiar with Git workflows, pull requests, Postman API testing, and RESTful service debugging.</li>
 <li>Active football player; continuously improving English communication for professional growth.</li>
 </ul></div>
